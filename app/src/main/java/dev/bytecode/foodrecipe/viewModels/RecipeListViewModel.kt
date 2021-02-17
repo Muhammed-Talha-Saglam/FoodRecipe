@@ -26,6 +26,10 @@ class RecipeListViewModel
 
 
     init {
+        newSearch()
+    }
+
+    fun newSearch() {
         viewModelScope.launch {
             val result = repository.search(
                 token = token,
@@ -34,7 +38,6 @@ class RecipeListViewModel
             )
             recipes.value = result
         }
-
     }
 
 }
