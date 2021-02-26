@@ -70,6 +70,7 @@ fun MyApp(context: MainActivity, isOnline: Boolean?) {
 
     if (isOnline == true) {
         val navController = rememberNavController()
+        vm.initialSearch()
 
         NavHost(navController = navController, startDestination = "recipeList") {
             composable("recipeList") {
@@ -92,8 +93,6 @@ fun MyApp(context: MainActivity, isOnline: Boolean?) {
                 fontWeight = FontWeight.Bold)
         }
     }
-
-
 
 
 
