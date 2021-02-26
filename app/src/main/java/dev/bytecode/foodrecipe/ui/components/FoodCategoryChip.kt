@@ -15,7 +15,7 @@ import androidx.compose.ui.unit.dp
 @Composable
 fun FoodCategoryChip(
     category: String,
-    isSelected: Boolean = false,
+    isSelected: Boolean,
     onSelectedCategoryChanged: (String) -> Unit,
     onExecuteSearch: () -> Unit
 ) {

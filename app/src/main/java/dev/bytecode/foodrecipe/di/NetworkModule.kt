@@ -5,7 +5,7 @@ import com.google.gson.GsonBuilder
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
-import dagger.hilt.android.components.ApplicationComponent
+import dagger.hilt.components.SingletonComponent
 import dev.bytecode.foodrecipe.network.RecipeService
 import dev.bytecode.foodrecipe.network.model.RecipeDtoMapper
 import retrofit2.Converter
@@ -16,7 +16,7 @@ import javax.inject.Named
 import javax.inject.Singleton
 
 @Module
-@InstallIn(ApplicationComponent::class)
+@InstallIn(SingletonComponent::class)
 object NetworkModule {
 
     @Singleton

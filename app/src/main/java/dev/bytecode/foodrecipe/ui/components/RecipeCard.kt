@@ -1,5 +1,6 @@
 package dev.bytecode.foodrecipe.ui.components
 
+import android.content.Context
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -27,6 +28,7 @@ import dev.bytecode.foodrecipe.utils.LoadPicture
 @Composable
 fun RecipeCard(
     recipe: Recipe,
+    context:Context,
     onClick: () -> Unit
 ) {
     Card(
@@ -56,7 +58,7 @@ fun RecipeCard(
                 modifier = Modifier.fillMaxWidth()
             ) {
 
-                MakeFoodImage(recipe)
+                MakeFoodImage(recipe, context)
 
                 ShowIngredients(recipe)
 
@@ -111,11 +113,14 @@ fun MakeRecipeTitle(recipe: Recipe, ) {
 
 
 @Composable
-fun MakeFoodImage(recipe: Recipe) {
+fun MakeFoodImage(recipe: Recipe, context:Context) {
+
+
 
     recipe.featuredImage?.let { url ->
 
-        val image = LoadPicture(url = url, defaultImage = R.drawable.empty_plate).value
+
+        val image = LoadPicture(context ,url = url, defaultImage = R.drawable.empty_plate).value
 
         image?.let { img ->
             Image(

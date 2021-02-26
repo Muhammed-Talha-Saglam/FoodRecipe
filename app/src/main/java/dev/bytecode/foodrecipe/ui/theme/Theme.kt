@@ -12,10 +12,11 @@ private val DarkColorPalette = darkColors(
     secondary = teal200
 )
 
+
 private val LightColorPalette = lightColors(
     primary = purple500,
     primaryVariant = purple700,
-    secondary = teal200
+    secondary = teal200,
 
     /* Other default colors to override
     background = Color.White,
@@ -34,6 +35,7 @@ fun FoodRecipeTheme(darkTheme: Boolean = isSystemInDarkTheme(), content: @Compos
     } else {
         LightColorPalette
     }
+
 
     MaterialTheme(
         colors = colors,

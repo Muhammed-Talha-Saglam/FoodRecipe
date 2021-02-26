@@ -31,7 +31,9 @@ fun getAllFoodCategories(): List<FoodCategory> {
 
 fun getFoodCategory(value: String): FoodCategory? {
 
-    val map = FoodCategory.values().associateBy { FoodCategory::value }
+    val map = FoodCategory.values().associateBy {
+        it.value
+    }
     return map[value]
 
 }
